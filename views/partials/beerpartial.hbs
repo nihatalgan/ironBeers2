@@ -1,6 +1,7 @@
 <ul>
   {{#each data}}
-    <img src={{this.image_url}} height='150px' />
+    <a href='/beers/{{this.id}}'>
+      <img src={{this.image_url}} height='150px' /></a>
 
     <li>{{this.name}}</li>
 

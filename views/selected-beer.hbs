@@ -1,0 +1,16 @@
+  
+    {{> beerpartial}}
+  
+
+<ul>
+  {{#each data}}
+    <li>{{this.food_pairing}}</li>
+    <li>{{this.brewers_tips}}</li>
+    <li>First brewed: {{this.first_brewed}}</li>
+    <li>{{this.ingredients.yeast}}</li>
+    <li>{{this.contributed_by}}</li>
+    
+   
+
+  {{/each}}
+</ul>

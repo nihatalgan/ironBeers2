@@ -23,6 +23,7 @@ hbs.registerPartials(path.join(__dirname, 'views/partials'));
 app.get('/', (req, res) => {
   res.render('index');
 });
+
 app.get('/beers', (req, res) => {
   punkAPI
     .getBeers()
@@ -43,6 +44,13 @@ app.get('/random-beer', (req, res) => {
       res.render('random-beer', { data: responseFromAPI });
     })
     .catch(error => console.log(error));
+});
+
+app.get('/beers/:id', (req, res) => {
+  // console.log(req.params.id);
+  punkAPI.getBeer(req.params.id).then(selectedBeer => {
+    res.render('selected-beer', { data: selectedBeer });
+  });
 });
 
 app.listen(3000, () => console.log('🏃‍ on port 3000'));
